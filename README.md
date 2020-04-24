@@ -33,7 +33,12 @@ We will explain and present example code on how to integrate the above-listed co
  * [Multitech][multitech-lns]
  * [Kerlink][kerlink] [Wanesy][kerlink-wanesy]
  
-
+## The main steps to set up the lab
+The main steps to set up the lab enviroment are the following:
+1. Set up a LoRaWAN network that offers reliable LoRaWAN connectivity for yaour Abeeway trackers
+2. Set up a node-RED application server and make it available through the Internet
+3. Provision your trackers on the LoRaWAN network server and set up message routing to your node-RED application server 
+4. Turn on your trackers and check if their messages arrive at the node-RED app server
 
 
 [lorawan]: https://lora-alliance.org/about-lorawan
