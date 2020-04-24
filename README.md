@@ -13,9 +13,9 @@ This document explains how to set up a lab environment for testing the unique fe
    _TPXLE is Actility's Location Solver in the cloud_
 5. **Application Servers**  
    _Application servers will visualize the location data reported by trackers. In our demo environment we will use 2 application servers:_   
-   * The Abeeway Device Analiser (ADA)  
+   * **The Abeeway Device Analiser (ADA)**  
      _ADA is a demo application server provided by Actility in the cloud to test and configure Abeeway trackers_
-   * A test application server  
+   * **A test application server**  
      _We will explain how to build your own application server based on [Node-RED][node-red]_
 
 We will explain and present example code on how to integrate the above-listed components with the following network servers:
