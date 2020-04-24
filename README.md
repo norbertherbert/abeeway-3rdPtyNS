@@ -18,6 +18,11 @@ This document explains how to set up a lab environment for testing the unique fe
    * **A test application server**  
      _We will explain how to build your own application server based on [Node-RED][node-red]_
 
+These components are also presented on Figure 1 below:
+
+![Fig01](Fig01.png)
+
+
 We will explain and present example code on how to integrate the above-listed components with the following network servers:
  * [Actility][actility] [ThingPark Wireless][actility-tpw] or [ThingPark Enterprise][actility-tpe]  
    _This integration is only needed in case of On-Customer-Premise (OCP) deployments. SaaS platforms already have te necessary interfaces._
