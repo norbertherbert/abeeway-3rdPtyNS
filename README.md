@@ -18,9 +18,10 @@ This document explains how to set up a lab environment for testing the unique fe
    * **A test application server**  
      _We will explain how to build your own application server based on [Node-RED][node-red]_
 
-These components are also presented on Figure 1 below:
+These components are also presented on Figure 1 below. Blue color represents components from Actility and Abeeway, orange color represents componets that we plan to develop ourselves and white components are from 3rd parties.
 
 ![Fig01](Fig01.png)
+_Figure 1. - The components of the planned test environment_
 
 
 We will explain and present example code on how to integrate the above-listed components with the following network servers:
