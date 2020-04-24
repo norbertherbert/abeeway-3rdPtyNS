@@ -35,10 +35,49 @@ We will explain and present example code on how to integrate the above-listed co
  
 ## The main steps to set up the lab
 The main steps to set up the lab enviroment are the following:
-1. Set up a LoRaWAN network that offers reliable LoRaWAN connectivity for yaour Abeeway trackers
+
+### Verify your ThingPark Subscriber Credentials
+1. Log in to ThingPark subscriber Portal
+2. Open the Device Managger Application and provision your Abeeway Devices
+3. Open Abeeway Device Analyser and check if you can select the provisioned devices
+4. Create a never expiring API Token using the Swagger UI of DX Core API 
+
+### Send device messages to a node-RED application server
+We will deploy the following message flow:  
+**[Device]->[Gateway]->[Network Server]->[App Server]**
+1. Set up a LoRaWAN network that offers reliable LoRaWAN connectivity for your Abeeway trackers
 2. Set up a node-RED application server and make it available through the Internet
 3. Provision your trackers on the LoRaWAN network server and set up message routing to your node-RED application server 
 4. Turn on your trackers and check if their messages arrive at the node-RED app server
+
+### Insert ThingPark X Location Engine in the uplink message flow
+We will deploy the following message flow:  
+[Device]->[Gateway]->[Network Server]->**[i/f Translator]->[Location Engine]**->[App Server]
+1. Write a node-RED flow that
+   * receives messages from your Network Server,
+   * translates them for the API of ThingPark X Location Engine
+   * forwads translated messages to ThingPark X Location Engine using your API key
+2. Configure ThingPark X Location Engine so that it forwards resolved locations to the node-RED app server
+3. Write a node-RED flow that
+   * receives messages from ThingPark X Location Engine
+   * presents messages on a map
+
+### Verify uplink messages in your app and Abeeway Device Analyser application
+1. Log In to the ThingPark Subscriber Portal
+2. Open the Abeeway Device Analyser and check if device messages are shown up on the map
+
+### Insert ThingPark X Location Engine in the downlink message flow
+We will deploy the following message flow:  
+[ADA]->**[Location Engine]->[i/f Translator]**->[Network Server]->[Gateway]->[Device]
+1. Write a node-RED flow that
+   * receives downlink messages from ThingPark X Location Engine,
+   * translates them for the API of the downlink API of your Network Server
+   * forwads translated messages to your Network server
+### Verify that downlink messages sent from ADA are sent to devices properly
+1. Send a downlink configuration command to a tracker from ADA
+2. Verify with a node-RED debug node that it arrives at your node-RED app and is properly forwarded to your NS
+3. Check in your NS logs that the message was delivered to the device
+
 
 
 [lorawan]: https://lora-alliance.org/about-lorawan
