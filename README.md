@@ -2,14 +2,16 @@
 ## Introduction
 This document explains how to set up a lab environment for testing the unique features of [Abeeway][abeeway] tracker devices with different types of LoRaWAN Network Servers. The lab environment requires the following components:
 
-1. [Abeeway][abeeway] trackers
-2. A [LoRaWAN][lorawan] Network  
+0. **BLE beacons / WiFi routers**  
+   _These components are required only in case you want to test the BLE/WiFi scan feature of the trackers_
+1. **[Abeeway][abeeway] trackers**
+2. **A [LoRaWAN][lorawan] Network**  
    _A network is built from LoRaWAN Gateways and a LoRaWAN Network Server. In this tutorial we assume that the network is already present and offers reliable connectivity at the test area._  
-3. An interface converter application  
+3. **An interface converter application**  
    _It is a proxy application that translates messages between the LoRaWAN Network Server and the Location Solver. We will explain how you can develop your own interface proxy utilizing our [Node-RED][node-red] examples. (Please note that this component is not needed if you are using Actility Thingpark in the cloud.)_
-4. [ThingPark X Location Engine][actility-tpl] (TPXLE)  
+4. **[ThingPark X Location Engine][actility-tpl] (TPXLE)**  
    _TPXLE is Actility's Location Solver in the cloud_
-5. Application Servers  
+5. **Application Servers**  
    _Application servers will visualize the location data reported by trackers. In our demo environment we will use 2 application servers:_   
    * The Abeeway Device Analiser (ADA)  
      _ADA is a demo application server provided by Actility in the cloud to test and configure Abeeway trackers_
